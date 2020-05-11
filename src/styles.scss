@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+:root{
+  --theme-primary:#00caec;
+  --theme-secondary: #d5f9ff;
+}
+
+
+html, body{
+  // given font not imported using inbuilt
+  font-family: "Helvetica Neue", sans-serif ;
+  background: var(--theme-secondary);
+}
+
+a{
+  cursor: pointer;
+}

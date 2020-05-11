@@ -1,0 +1,35 @@
+footer{
+  background-color: #3c3c3c;
+  color: #ccc;
+  padding: 6px 0;
+  font-size: 13px;
+  a{
+    &:hover{
+      color: #ffffff;
+    }
+  }
+  .social{
+    text-align: right;
+    a{
+      padding: 2px;
+      width: 24px;
+      height: 24px;
+      //background-color: #f00;
+      border-radius: 50%;
+      color: #fff;
+      margin: 0 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.4s linear;
+      &.facebook{background-color: #426ab3}
+      &.linkedin{background-color: #008dc9}
+      &.youtube{background-color: #ea1c00}
+      &.twitter{background-color: #67dcff}
+      &.pinterest{background-color: #ff260c}
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+}
