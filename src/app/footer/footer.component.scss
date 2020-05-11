@@ -2,7 +2,7 @@ footer{
   background-color: #3c3c3c;
   color: #ccc;
   padding: 6px 0;
-  font-size: 13px;
+  font-size: 10px;
   a{
     &:hover{
       color: #ffffff;
@@ -30,6 +30,19 @@ footer{
       &:hover{
         opacity: 0.8;
       }
+    }
+  }
+  @media (max-width: 767px) {
+    text-align: center;
+    font-size: 13px;
+    color: #ffffff;
+    .social{
+      text-align: center;
+    }
+    a{
+      margin-bottom: 5px;
+      margin-top: 5px;
+      display: inline-block;
     }
   }
 }
