@@ -44,31 +44,32 @@
   <div class="container">
     <div class="row">
       <div class="col-7 col-md-5 col-lg-4 form">
-          <form ngForm>
+          <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
               <div class="form-title">Know more about the safest paint</div>
               <div class="form-des">
                 Looking to paint your walls with a safe premium paint?
                 Get in touch to know more about Ghar ka Sanitizer-
                 Berger Silk Breathe Easy. Fill the form below
               </div>
+             <p *ngIf="enquiryForm.touched && enquiryForm.invalid" class="text-danger">Form is not Valid</p>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name">
             </div>
             <div class="form-group">
-              <input type="number" class="form-control" placeholder="Mobile Number">
+              <input type="number" class="form-control" placeholder="Mobile Number" formControlName="number">
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email">
+              <input type="email" class="form-control" placeholder="Email" formControlName="email">
             </div>
             <div class="form-group">
-              <select class="form-control">
+              <select class="form-control" formControlName="city">
                 <option value="">Your City</option>
                 <option value="Mumbai">Mumbai</option>
               </select>
 <!--              <input type="text" class="form-control" placeholder="Your City">-->
             </div>
             <div class="form-group">
-              <select class="form-control">
+              <select class="form-control" formControlName="language">
                 <option value="">Language you prefer</option>
                 <option value="English">English</option>
                 <option value="Hindi">Hindi</option>
@@ -77,18 +78,18 @@
 <!--              <input type="text" class="form-control" placeholder="Language you prefer">-->
             </div>
             <div class="form-group">
-              <textarea class="form-control" rows="2" placeholder="Message(Optional):"></textarea>
+              <textarea class="form-control" formControlName="message" rows="2" placeholder="Message(Optional):"></textarea>
             </div>
             <div class="form-group">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" formControlName="terms">
                 <label class="custom-control-label" for="customCheck1">
                   I agree to the terms and conditions and also authorize Berger Paints India to contact me overriding my registry on NDN
                 </label>
               </div>
             </div>
             <div class="form-group mb-0 text-center">
-              <button class="btn btn-info">SUBMIT</button>
+              <button type="submit" class="btn btn-info">SUBMIT</button>
             </div>
           </form>
       </div>

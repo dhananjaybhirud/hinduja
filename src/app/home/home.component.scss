@@ -79,6 +79,12 @@ section.banner{
       position: absolute;
       width: 100%;
       left: 0;
+      &.ng-touched.ng-invalid{
+        box-shadow: -3px -15px 15px #f11e1e;
+      }
+      &.ng-valid{
+        box-shadow: -3px -15px 15px #4caf50;
+      }
       .form-title{
         color: #00caec;
         font-weight: 600;
