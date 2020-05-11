@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import * as jspdf from 'jspdf';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
   enquiryForm: FormGroup;
+  @ViewChild('reportContent') reportContent: ElementRef;
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -24,6 +26,21 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
    console.log(this.enquiryForm)
+    const doc = new jspdf;
+    const specialElementHandlers = {
+      '#editor': function (element, renderer) {
+        return true;
+      }
+    };
+
+    const content = this.reportContent.nativeElement;
+
+    doc.fromHTML(content.innerHTML, 15, 15, {
+      'width': 190,
+      'elementHandlers': specialElementHandlers
+    });
+
+    doc.save('asdfghj' + '.pdf');
   }
 
 }
