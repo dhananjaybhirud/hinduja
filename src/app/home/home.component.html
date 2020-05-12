@@ -51,22 +51,43 @@
                 Get in touch to know more about Ghar ka Sanitizer-
                 Berger Silk Breathe Easy. Fill the form below
               </div>
-             <p *ngIf="enquiryForm.touched && enquiryForm.invalid" class="text-danger">Form is not Valid</p>
+             <!-- <p *ngIf="enquiryForm.touched && enquiryForm.invalid" class="text-danger">Form is not Valid</p> -->
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name" formControlName="name">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name" pattern="[a-zA-Z ]*">
+              <div class="errors">
+                <small class="text-danger" *ngIf="submitted && f.name.errors">Please enter your name.</small>
+                <small class="text-danger" *ngIf="f.name.touched && f.name.invalid">Special characters and numbers
+                  are not allowed.</small>
+              </div>
             </div>
             <div class="form-group">
               <input type="number" class="form-control" placeholder="Mobile Number" formControlName="number">
+              <div class="errors">
+                <small class="text-danger" *ngIf="submitted && f.number.errors">Please enter your mobile number.</small>
+                <small class="text-danger" *ngIf="f.number.touched && f.number.invalid">Special characters and alphabets
+                  are not allowed..</small>
+              </div>
+              
             </div>
             <div class="form-group">
               <input type="email" class="form-control" placeholder="Email" formControlName="email">
+              <div class="errors">
+                <small class=" text-danger" *ngIf="submitted && f.email.errors">Please enter your email address.</small>
+                <small class=" text-danger" *ngIf="f.email.touched && f.email.invalid">Please enter a valid email address.</small>
+              </div>
+              
             </div>
             <div class="form-group">
               <select class="form-control" formControlName="city">
                 <option value="">Your City</option>
                 <option value="Mumbai">Mumbai</option>
               </select>
-<!--              <input type="text" class="form-control" placeholder="Your City">-->
+              <div class="errors">
+                <small class=" text-danger" *ngIf="submitted && f.city.errors">Please enter your city.</small>
+                <small class=" text-danger" *ngIf="f.city.touched && f.city.invalid">Special characters and numbers
+                  are not allowed.</small>
+              </div>
+              
             </div>
             <div class="form-group">
               <select class="form-control" formControlName="language">
@@ -75,10 +96,15 @@
                 <option value="Hindi">Hindi</option>
                 <option value="Marathi">Marathi</option>
               </select>
-<!--              <input type="text" class="form-control" placeholder="Language you prefer">-->
+              <div class="errors">
+                
+              </div>
             </div>
             <div class="form-group">
               <textarea class="form-control" formControlName="message" rows="2" placeholder="Message(Optional):"></textarea>
+              <div class="errors">
+                
+              </div>
             </div>
             <div class="form-group">
               <div class="custom-control custom-checkbox">

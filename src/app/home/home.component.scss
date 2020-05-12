@@ -72,13 +72,17 @@ section.banner{
     padding: 0;
     form{
       box-shadow: -3px -15px 15px #666;
-      top: -210px;
+      // top: -210px;
+      bottom: 0;
       background: #Fff;
       padding: 25px;
       border-radius: 20px;
       position: absolute;
       width: 100%;
       left: 0;
+      .errors{
+        height: 12px;
+      }
       &.ng-touched.ng-invalid{
         box-shadow: -3px -15px 15px #f11e1e;
       }
@@ -90,7 +94,7 @@ section.banner{
         font-weight: 600;
       }
       .form-des{
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
       .btn-info{
         background-color: #00caec;

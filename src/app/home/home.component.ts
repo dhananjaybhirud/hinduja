@@ -9,6 +9,7 @@ import * as jspdf from 'jspdf';
 })
 export class HomeComponent implements OnInit {
   enquiryForm: FormGroup;
+  submitted = false;
   @ViewChild('reportContent') reportContent: ElementRef;
   constructor(private formBuilder: FormBuilder) { }
 
@@ -24,23 +25,30 @@ export class HomeComponent implements OnInit {
     });
   }
 
+
+  get f() { return this.enquiryForm.controls; }
+
   onSubmit(){
-   console.log(this.enquiryForm)
-    const doc = new jspdf;
-    const specialElementHandlers = {
-      '#editor': function (element, renderer) {
-        return true;
-      }
-    };
+    //  console.log(this.enquiryForm)
+    this.submitted = true;
+    if(this.enquiryForm.valid){
+      const doc = new jspdf;
+      const specialElementHandlers = {
+        '#editor': function (element, renderer) {
+          return true;
+        }
+      };
 
-    const content = this.reportContent.nativeElement;
+      const content = this.reportContent.nativeElement;
 
-    doc.fromHTML(content.innerHTML, 15, 15, {
-      'width': 190,
-      'elementHandlers': specialElementHandlers
-    });
+      doc.fromHTML(content.innerHTML, 15, 15, {
+        'width': 190,
+        'elementHandlers': specialElementHandlers
+      });
 
-    doc.save('asdfghj' + '.pdf');
+      doc.save('asdfghj' + '.pdf');
+    }
+    
   }
 
 }
