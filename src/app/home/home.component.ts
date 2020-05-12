@@ -29,6 +29,20 @@ export class HomeComponent implements OnInit {
 
   get f() { return this.enquiryForm.controls; }
 
+
+  //  This is for omit number and special characters
+  omit_special_char(event){   
+      var k;  
+      k = event.charCode;  
+      if(((k > 64 && k < 91) || (k > 96 && k < 123) )){
+             return true;
+      }
+      else{
+             return false;
+      }
+    }
+    
+
   onSubmit(){
     //  console.log(this.enquiryForm)
     this.submitted = true;

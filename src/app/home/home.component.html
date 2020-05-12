@@ -53,7 +53,8 @@
               </div>
              <!-- <p *ngIf="enquiryForm.touched && enquiryForm.invalid" class="text-danger">Form is not Valid</p> -->
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Name" formControlName="name" pattern="[a-zA-Z ]*">
+              <input type="text" class="form-control" 
+              placeholder="Name" formControlName="name" pattern="[a-zA-Z ]*">
               <div class="errors">
                 <small class="text-danger" *ngIf="(submitted && f.name.errors) && !(f.name.touched && f.name.invalid && f.name.value !== '')">Please enter your name.</small>
                 <small class="text-danger" *ngIf="f.name.touched && f.name.invalid && f.name.value !== ''">Special characters and numbers
