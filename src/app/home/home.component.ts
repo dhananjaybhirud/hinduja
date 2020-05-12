@@ -19,10 +19,11 @@ export class HomeComponent implements OnInit {
       number: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       city: ['', Validators.required],
-      language: ['', Validators.required],
+      language: [''],
       message: [''],
       terms: ['', Validators.required]
     });
+    console.log(this.enquiryForm);
   }
 
 
@@ -48,7 +49,7 @@ export class HomeComponent implements OnInit {
 
       doc.save('asdfghj' + '.pdf');
     }
-    
+    console.log(this.enquiryForm);
   }
 
 }

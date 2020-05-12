@@ -55,16 +55,16 @@
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Name" formControlName="name" pattern="[a-zA-Z ]*">
               <div class="errors">
-                <small class="text-danger" *ngIf="submitted && f.name.errors">Please enter your name.</small>
-                <small class="text-danger" *ngIf="f.name.touched && f.name.invalid">Special characters and numbers
+                <small class="text-danger" *ngIf="(submitted && f.name.errors) && !(f.name.touched && f.name.invalid && f.name.value !== '')">Please enter your name.</small>
+                <small class="text-danger" *ngIf="f.name.touched && f.name.invalid && f.name.value !== ''">Special characters and numbers
                   are not allowed.</small>
               </div>
             </div>
             <div class="form-group">
               <input type="number" class="form-control" placeholder="Mobile Number" formControlName="number">
               <div class="errors">
-                <small class="text-danger" *ngIf="submitted && f.number.errors">Please enter your mobile number.</small>
-                <small class="text-danger" *ngIf="f.number.touched && f.number.invalid">Special characters and alphabets
+                <small class="text-danger" *ngIf="(submitted && f.number.errors) && !(f.number.touched && f.number.invalid && f.number.value !== '')">Please enter your mobile number.</small>
+                <small class="text-danger" *ngIf="f.number.touched && f.number.invalid && f.number.value !== ''">Special characters and alphabets
                   are not allowed..</small>
               </div>
               
@@ -72,8 +72,8 @@
             <div class="form-group">
               <input type="email" class="form-control" placeholder="Email" formControlName="email">
               <div class="errors">
-                <small class=" text-danger" *ngIf="submitted && f.email.errors">Please enter your email address.</small>
-                <small class=" text-danger" *ngIf="f.email.touched && f.email.invalid">Please enter a valid email address.</small>
+                <small class=" text-danger" *ngIf="(submitted && f.email.errors) && !(f.email.touched && f.email.invalid && f.email.value !== '')">Please enter your email address.</small>
+                <small class=" text-danger" *ngIf="f.email.touched && f.email.invalid && f.email.value !== ''">Please enter a valid email address.</small>
               </div>
               
             </div>
@@ -83,8 +83,8 @@
                 <option value="Mumbai">Mumbai</option>
               </select>
               <div class="errors">
-                <small class=" text-danger" *ngIf="submitted && f.city.errors">Please enter your city.</small>
-                <small class=" text-danger" *ngIf="f.city.touched && f.city.invalid">Special characters and numbers
+                <small class=" text-danger" *ngIf="(submitted && f.city.errors) && !(f.city.touched && f.city.invalid && f.city.value !== '')">Please enter your city.</small>
+                <small class=" text-danger" *ngIf="f.city.touched && f.city.invalid && f.city.value !== ''">Special characters and numbers
                   are not allowed.</small>
               </div>
               
