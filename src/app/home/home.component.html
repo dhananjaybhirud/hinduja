@@ -62,7 +62,15 @@
               </div>
             </div>
             <div class="form-group">
-              <input type="number" class="form-control" placeholder="Mobile Number" formControlName="number">
+              <div class="input-group custom-input">
+                <div class="input-group-addon">
+                  <div class="input-group-text">
+                    +91
+                  </div>
+                </div>
+                <input type="number" class="form-control" placeholder="Mobile Number" formControlName="number">
+              </div>
+              
               <div class="errors">
                 <small class="text-danger" *ngIf="(submitted && f.number.errors) && !(f.number.touched && f.number.invalid && f.number.value !== '')">Please enter your mobile number.</small>
                 <small class="text-danger" *ngIf="f.number.touched && f.number.invalid && f.number.value !== ''">Special characters and alphabets
@@ -180,7 +188,7 @@ The Indian Medical Association
     </tr>
     <tr>
       <td>Number</td>
-      <td>{{enquiryForm.value.number}}</td>
+      <td>+91 {{enquiryForm.value.number}}</td>
     </tr>
     <tr>
       <td>Email</td>

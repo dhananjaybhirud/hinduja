@@ -24,6 +24,18 @@ a{
   border-radius: 20px !important;
 }
 
+.custom-input{
+  .input-group-text{
+    border-radius: 20px 0 0 20px !important;
+    border-right: 0;
+    background-color: transparent;
+  }
+  .form-control{
+    border-radius: 0 20px 20px 0 !important;
+    border-left: 0;
+  }
+}
+
 .custom-checkbox .custom-control-label::before{
   border-radius: 50px;
 }
